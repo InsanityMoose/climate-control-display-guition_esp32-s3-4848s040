@@ -1,24 +1,10 @@
 # Climate Control Display with ESPHome and LVGL
-An ESPHome-based smart climate control interface for Home Assistant using WT32-SC01 Plus display.
+An ESPHome-based smart climate control interface for Home Assistant using Guition ESP32-S3-4848S040 display.
 
-[![ESPHome: 2025.2.1](https://img.shields.io/badge/ESPHome-2025.2.1-blue.svg)](https://esphome.io)
+[![ESPHome: 2025.7.5](https://img.shields.io/badge/ESPHome-2025.7.5-blue.svg)](https://esphome.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Device Preview Climate Off](images/climate_off.jpg)
-
-![Device Preview Climate On](images/climate_on.jpg)
-
-## Demo Video
-
-<a href="https://www.youtube.com/watch?v=l97-AFoVEJQ" target="_blank" rel="noopener noreferrer">▶ Click here to watch a short demo</a>
-
-### 3D Print Case
-
-[Thingiverse - WT32-SC01 PLUS wall enclosure](https://www.thingiverse.com/thing:6683758)
-
-![Wall Mount](images/wall_mount.jpg)
-
-![esp32-s3_wireless-tag_sc01_plus_back_connection](images/esp32-s3_wireless-tag_sc01_plus_back_connection.png)
+![Device Preview](images/climate.jpg)
 
 ## Table of Contents
 - [Hardware Requirements](#hardware-requirements)
@@ -31,17 +17,14 @@ An ESPHome-based smart climate control interface for Home Assistant using WT32-S
 - [References](#references)
 
 ## Hardware Requirements
-- **Display Module**: [Wireless-Tag WT32-SC01 PLUS](https://robu.in/product/wireless-tag-wt32-sc01-plus-esp32s3-based-3-5-inch-iot-display/) (ZX3D50CE08S-v15-USRC) 
-  - 3.5 inch 320x480 LCD
-  - Screen Resolution: 480 x 320
-  - Interface: 8080
-  - ST7796UI driver with MCU8080 8Bit interface
-  - RGB565 color
-  - ILI9488 controller
-  - Single touch capacitive FT6336U I2S
-  - MCU: ESP32-S3 (ESP32-WROVER-B)
+- **Display Module**: [Guition ESP32-S3-4848S040]([https://robu.in/product/wireless-tag-wt32-sc01-plus-esp32s3-based-3-5-inch-iot-display/](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)) 
+  - 4.0 inch 480x480 LCD
+  - Screen Resolution: 480 x 480
+  - ST7701S driver with MCU8080 8Bit interface
+  - GT911 touchscreen controller
+  - MCU: ESP32-S3 ( ESP32-S3-WROOM-1U-N16R8)
   - WiFi + BT + BLE
-  - 4MB SPI flash
+  - 16MB SPI flash
   - 8MB PSRAM
 
 ## Features
@@ -70,15 +53,15 @@ An ESPHome-based smart climate control interface for Home Assistant using WT32-S
 
 ### Prerequisites
 1. Home Assistant with ESPHome installed
-2. WT32-SC01 Plus display module
+2. ESP32-S3-4848S040
 3. USB-C cable for flashing
 
 1. Install ESPHome in your Home Assistant instance
 2. Create a new ESPHome device
 3. Copy the configuration files:
    ```bash
-   git clone https://github.com/hareeshmu/climate-control-display.git
-   cd climate-control-display
+   git clone https://github.com/InsanityMoose/climate-control-display-guition_esp32-s3-4848s040.git
+   cd climate-control-display-guition_esp32-s3-4848s040
    ```
 
 4. Update `secrets.yaml`:
@@ -88,7 +71,7 @@ An ESPHome-based smart climate control interface for Home Assistant using WT32-S
    wifi_password: "Your_WiFi_Password"
    fallback_password: "AP_Fallback_Password"
    ota_password: "OTA_Update_Password"
-   api_key_b64: "Your_Base64_API_Key"
+   api_key: "Your_API_Key"
    ```
 
 5. Configure your device in `master-ac-display.yaml`:
@@ -124,7 +107,7 @@ Nake sure the at you have enabled `Allow the device to perform Home Assistant Ac
 
 ### Temperature Control
 - Range: 16°C - 34°C
-- Step: 0.5°C increments
+- Step: 1°C increments
 - Visual circular gauge feedback
 
 ### Fan Modes
@@ -139,31 +122,10 @@ Nake sure the at you have enabled `Allow the device to perform Home Assistant Ac
 
 ## GPIO Pinout
 
-### Display Interface
-```
-Display Control:
-- SDA: GPIO6
-- SCL: GPIO5
-- DC:  GPIO0
-- WR:  GPIO47
-- RST: GPIO4
-- BL:  GPIO45
-
-Data Bus:
-- D0: GPIO9
-- D1: GPIO46
-- D2: GPIO3
-- D3: GPIO8
-- D4: GPIO18
-- D5: GPIO17
-- D6: GPIO16
-- D7: GPIO15
-```
-
 ## Dependencies
 
 ### Required Software
-- ESPHome 2025.2.1+
+- ESPHome 2025.7.5+
 - Home Assistant Core
 - LVGL UI Components
 
@@ -201,8 +163,7 @@ esphome clean master-ac-display.yaml
 ## References
 
 ### Documentation
-- [WT32-SC01 Plus Datasheet](https://www.marutsu.co.jp/contents/shop/marutsu/datasheet/khe_WT32-SC01-PLUS.pdf)
-- [ESPHome FT63x6 Documentation](https://esphome.io/components/touchscreen/ft63x6.html)
+- [ESP32-S3-4848S040](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)
 - [LVGL Cookbook](https://esphome.io/cookbook/lvgl.html)
 - [ESP32 Forum Discussion](https://www.esp32.com/viewtopic.php?t=39219)
 
@@ -220,4 +181,4 @@ MIT License
 
 ---
 
-Made with ❤️ by kpr
+Thanks to kpr and everyone else
