@@ -20,7 +20,7 @@ An ESPHome-based smart climate control interface for Home Assistant using Guitio
 - **Display Module**: [Guition ESP32-S3-4848S040]([https://robu.in/product/wireless-tag-wt32-sc01-plus-esp32s3-based-3-5-inch-iot-display/](https://devices.esphome.io/devices/guition-esp32-s3-4848s040/)) 
   - 4.0 inch 480x480 LCD
   - Screen Resolution: 480 x 480
-  - ST7701S driver with MCU8080 8Bit interface
+  - ST7701S display driver
   - GT911 touchscreen controller
   - MCU: ESP32-S3 ( ESP32-S3-WROOM-1U-N16R8)
   - WiFi + BT + BLE
