@@ -1,16 +1,11 @@
 # ESPHome configuration for Climate Control Display
 # Version: v1.0.0
-# Date: 2025-03-01
-# ESPHome Version 2025.2.1
-# WT32-SC01 PLUS 
-# ZX3D50CE08S-v15-USRC 230228
-# 3.5 inch 320x480, driver ST7796UI, interface MCU8080 8Bit, color RGB565, ILI9488 controller 
-# single touch capacitive FT6336U I2S
-# ESP32-S3 model ESP32-WROVER-B, WiFi + BT + BLE MCU module, 4MB SPI flash and 8MB PSRAM
-# https://www.marutsu.co.jp/contents/shop/marutsu/datasheet/khe_WT32-SC01-PLUS.pdf
-# https://esphome.io/components/touchscreen/ft63x6.html
-# https://www.esp32.com/viewtopic.php?t=39219
-# https://github.com/esphome/esphome/pull/8230 Implement i80 bus for ili9xxx displays
+# Date: 2025-11-12
+# ESPHome Version 2025.7.5
+# ESP32-S3-4848S040
+# 4.0 inch 480x480, driver ST7701S
+# GT911 capacitive touch controller
+# ESP32-S3 model ESP32-S3-WROOM-1U-N16R8, WiFi + BT + BLE MCU module, 16MB SPI flash and 8MB PSRAM
 # https://esphome.io/cookbook/lvgl.html
 
 
